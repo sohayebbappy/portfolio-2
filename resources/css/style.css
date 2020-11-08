@@ -1,0 +1,706 @@
+/* ================================================
+
+Template Name: Paul Lapkin
+Template URI:
+Description: An Awesome Personal Portfolio Template.
+Author: Sohayeb
+Author URI:
+Version: 1.0
+Support: demo@gmail.com
+
+=================================================== */
+
+/* ================================================
+
+CSS INDEX
+---------
+1. Google Fonts
+2. Common CSS
+3. Reusable Componants
+4. Hero
+5. About
+6. Process
+7. Experience
+8. Work
+9. Contact
+10. Footer
+=================================================== */
+
+/* 1. Google Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;700&display=swap');
+
+/* 2.Common CSS */
+
+ *{
+     margin: 0;
+     padding: 0;
+     -webkit-box-sizing: border-box;
+     box-sizing: border-box;
+}
+ html, body{
+     background: #fff;
+     color: #222;
+     font-size: 62.5%;
+     line-height: 1.5;
+     font-family: 'Roboto', sans-serif;
+}
+ h1,h2,h3,h4,h5,h6{
+     font-family: 'Raleway', sans-serif;
+     font-weight: 700;
+}
+ h1{
+     font-size: 6.5rem;
+     color: #fff;
+}
+ a:link, a:hover{
+     text-decoration: none;
+}
+ ul{
+     margin: 0;
+     padding: 0;
+}
+ ul li{
+     list-style-type: none;
+}
+ img{
+     width: 100%;
+}
+/* 3. Reusable Componants */
+ .hero .container{
+     max-width: 114rem;
+     position: inherit;
+     z-index: 999;
+}
+ section{
+     padding: 12rem 0;
+}
+ h2{
+     font-size: 4rem;
+}
+ h3{
+     font-size: 2.6rem;
+}
+ h4{
+     font-size: 1.8rem;
+}
+ p{
+     font-size: 1.6rem;
+}
+ .sectionTitle{
+     margin-bottom: 6rem;
+}
+/* 4. Hero Section Starts */
+ .hero{
+     width: 100%;
+     height: 100vh;
+     background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(img/hero.jpg);
+     background-position: top left;
+     background-repeat: no-repeat;
+     background-size: cover;
+     position: relative;
+     overflow: hidden;
+}
+ .customnav{
+     background: rgba(255, 255, 255, 0)!important;
+     height: 15vh;
+}
+ .customnav ul li a{
+     font-size: 2rem;
+     color: #fff!important;
+     padding: 0 1rem!important;
+     -webkit-transition: all 0.4s ease-in;
+     transition: all 0.4s ease-in;
+     display: inline-block;
+}
+ .customnav ul li a::after{
+     content: '';
+     display: block;
+     height: 2px;
+     background: #ff2b4a;
+     margin-top: 1rem;
+     width: 0;
+     -webkit-transition: all 0.4s ease-in;
+     transition: all 0.4s ease-in;
+}
+ .customnav ul li a:hover{
+     color: #ff2b4a!important;
+}
+ .customnav ul li a:hover::after{
+     width: 100%;
+}
+ .navbar-brand img{
+     -webkit-animation: movingImg;
+     animation: movingImg;
+     -webkit-animation-duration: 5s;
+     animation-duration: 5s;
+     -webkit-animation-iteration-count: infinite;
+     animation-iteration-count: infinite;
+     -webkit-animation-timing-function: ease-in;
+     animation-timing-function: ease-in;
+     -webkit-animation-direction: alternate;
+     animation-direction: alternate;
+}
+ @-webkit-keyframes movingImg {
+     0% {
+        -webkit-transform: scale(1.0, 1.0);
+        transform: scale(1.0, 1.0);
+    }
+     50% {
+         -webkit-transform: scale(1.3, 1.3);
+         transform: scale(1.3, 1.3);
+    }
+     100% {
+         -webkit-transform: scale(1.0, 1.0);
+         transform: scale(1.0, 1.0);
+    }
+}
+ @keyframes movingImg {
+     0% {
+        -webkit-transform: scale(1.0, 1.0);
+        transform: scale(1.0, 1.0);
+    }
+     50% {
+         -webkit-transform: scale(1.3, 1.3);
+         transform: scale(1.3, 1.3);
+    }
+     100% {
+         -webkit-transform: scale(1.0, 1.0);
+         transform: scale(1.0, 1.0);
+    }
+}
+ .uk-active{
+     background: rgba(3, 169, 244, 0.8)!important;
+}
+ .centerDiv{
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     -webkit-transform: translate(-50%, -50%);
+     transform: translate(-50%, -50%);
+     text-align: center;
+     z-index: 900;
+}
+ .centerDiv h1{
+     margin-bottom: 0!important;
+     padding-bottom: 0!important;
+}
+ .centerDiv h1::before{
+     content: '';
+     display: block;
+     height: 2px;
+     background: #fff;
+     margin-top: 1rem;
+}
+ .centerDiv h1::after{
+     content: '';
+     display: block;
+     height: 2px;
+     background: #fff;
+     margin-top: 1rem;
+     margin-top: 0;
+}
+ .centerDiv p{
+     color: #fff;
+     font-size: 2rem;
+     word-spacing: .5rem;
+}
+ .nextSectionBtn i{
+     font-size: 4rem;
+     color: #fff;
+     position: absolute;
+     right: 0;
+     left: 0;
+     bottom: 5rem;
+     text-align: center;
+     z-index: 99;
+     -webkit-animation: moving;
+     animation: moving;
+     -webkit-animation-duration: 2s;
+     animation-duration: 2s;
+     -webkit-animation-iteration-count: infinite;
+     animation-iteration-count: infinite;
+     -webkit-animation-timing-function: ease-in;
+     animation-timing-function: ease-in;
+     -webkit-animation-direction: alternate;
+     animation-direction: alternate;
+     -webkit-transition: all .5s ease-in;
+     transition: all .5s ease-in;
+}
+ @-webkit-keyframes moving {
+     from {
+         padding-top: 2rem;
+    }
+     to {
+         padding-bottom: 2rem;
+    }
+}
+ @keyframes moving {
+     from {
+         padding-top: 2rem;
+    }
+     to {
+         padding-bottom: 2rem;
+    }
+}
+ .nextSectionBtn i:hover{
+     color: #ff2b4a;
+}
+ .particles-js-canvas-el{
+     position: absolute;
+     top: 0;
+     left: 0;
+}
+ .navbar-dark .navbar-toggler {
+     color: rgba(255,255,255,1)!important;
+     border-color: rgba(255,255,255,1)!important;
+}
+ @media (max-width: 992px) {
+     .customnav ul{
+         text-align: center;
+    }
+     .centerDiv{
+         display: none;
+    }
+     .uk-active{
+         display: none;
+    }
+}
+/* Hero Section Ends */
+/* 5. aboutSection Starts */
+ .aboutSection{
+     width: 100%;
+     height: auto;
+}
+ .aboutSection img{
+     -webkit-clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+     clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+}
+ .aboutSection h4{
+     margin: 5rem 0;
+}
+ .aboutSection p{
+     margin: 2rem 0;
+}
+ .aboutSection a{
+     display: inline-block;
+     padding:1rem 7rem ;
+     text-align: center;
+     border: .2rem solid #ff2b4a ;
+     font-size: 1.8rem;
+     -webkit-transition: all 0.4s ease-in;
+     transition: all 0.4s ease-in;
+     border-radius: 0!important;
+}
+ .aboutSection a:hover{
+     background: #ff2b4a;
+     color: #fff;
+}
+/* aboutSection Ends */
+/* 6. Process Section Starts */
+ .process{
+     width: 100%;
+     min-height: 70rem;
+     background: #F6F6F6;
+     margin: auto;
+}
+ .process h2{
+     text-align: center;
+     margin: 2rem 0;
+}
+ .process p{
+     text-align: center;
+     margin: 1rem 0;
+}
+ .process i{
+     display: inline-block;
+     font-size: 5rem;
+     color: #fff;
+}
+ .process h4{
+     text-align: center;
+     margin: 4rem 0;
+     color: #fff;
+     font-size: 2rem;
+     text-transform: uppercase;
+}
+ .process .boxes{
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     grid-gap: 1rem;
+     text-align: center;
+}
+ .process .icon1, .icon2, .icon3, .icon4{
+     padding: 6rem;
+     background: #ff2b4a;
+}
+ .process .icon1{
+     background: #10C6FC;
+}
+ .process .icon2{
+     background: #835AEB;
+}
+ .process .icon3{
+     background: #002453;
+}
+ @media (max-width:992px) {
+     .process .boxes{
+         display: grid;
+         grid-template-columns: repeat(2, 1fr);
+         grid-gap: 1rem;
+         text-align: center;
+    }
+}
+ @media (max-width:576px) {
+     .process .boxes{
+         display: grid;
+         grid-template-columns: repeat(1, 1fr);
+         grid-gap: 1rem;
+         text-align: center;
+    }
+}
+/* Process Section Ends */
+/* 7. Experience Section Starts */
+ .experience{
+     width: 100%;
+     height: auto;
+     background-image: -webkit-gradient( linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0))), url(img/experience.jpg);
+     background-image: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(img/experience.jpg);
+     background-position: top left;
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-attachment: fixed;
+}
+ .experience .workBox{
+     background: rgba(0, 0, 0, 0.7);
+     color: #fff;
+     padding: 2rem;
+}
+ .grid_container{
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     grid-gap: 1rem
+}
+ .experience .workBox h3{
+     color: #fff;
+     margin: 4rem 1rem;
+}
+ .experience .workBox h4{
+     color: #fff;
+     margin: 3rem 1rem;
+}
+ .experience .workBox p{
+     color: #fff;
+     margin: 2rem 1rem;
+}
+ hr{
+     border-top: 1px solid #fff;
+     margin: 3rem 1rem;
+}
+ @media (max-width:992px) {
+     .experience .grid_container{
+         display: grid;
+         grid-template-columns: repeat(1, 1fr);
+         grid-gap: 1rem;
+         text-align: center;
+    }
+}
+/* Experience Section Ends */
+/* 8. Work Section Starts */
+ .work{
+     width: 100%;
+     height: auto;
+     text-align: center;
+}
+ .work-filter {
+     margin-bottom: 4rem;
+}
+ .work-filter li {
+     list-style-type: none;
+     display: inline-block;
+     background: #000;
+     font-size: 1.6rem;
+     color: #fff;
+     text-transform: capitalize;
+     margin: 0 .5rem;
+     padding: .5rem 1.5rem;
+     -webkit-transition: .5s;
+     transition: .5s;
+     cursor: pointer;
+}
+ .work-item img {
+     width: 100%;
+}
+ .work-filter li:hover {
+     background: #ff2b4a;
+}
+ .work-container {
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     grid-template-rows: 1fr 1fr;
+     grid-gap: 1rem;
+    /* grid-auto-rows: minmax(15rem, 25rem);
+     */
+}
+/* .work-item:nth-child(5) {
+     grid-column: 1/ 3;
+     grid-row: 2/ 3;
+}
+ */
+ .work .mixitup-control-active {
+     background: #ff2b4a;
+}
+ @media (max-width:992px) {
+     .work-container {
+         display: grid;
+         grid-template-columns: repeat(2, 1fr);
+        /* grid-template-rows: 1fr 1fr;
+         */
+         grid-gap: 1rem;
+        /* grid-auto-rows: minmax(15rem, 25rem);
+         */
+    }
+}
+ @media (max-width:576px) {
+     .work-filter li {
+         display: block;
+         width: 15rem;
+         margin: auto;
+         margin-bottom: 1rem;
+    }
+     .work-container {
+         display: grid;
+         grid-template-columns: repeat(1, 1fr);
+        /* grid-template-rows: 1fr 1fr;
+         */
+         grid-gap: 1rem;
+        /* grid-auto-rows: minmax(15rem, 25rem);
+         */
+    }
+}
+/* Work Section Ends */
+/* Testimonial Section Starts */
+ .testimonial{
+     width: 100%;
+     height: 100vh;
+     background-image: -webkit-gradient( linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0))), url(img/testimonial.jpg);
+     background-image: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(img/testimonial.jpg);
+     margin: 0;
+     padding: 0;
+     background-position: center top;
+     background-repeat: no-repeat;
+     background-size: cover;
+}
+/* .bgimg{
+     width: 100%;
+     height: 100%;
+     background-image: url(img/testimonial.jpg);
+     background-position: center top;
+     background-repeat: no-repeat;
+     -webkit-background-size: cover;
+     background-size: cover;
+}
+ */
+ .testimonial .left_div{
+     height: 100%;
+     padding: 5rem 0 5rem 2rem ;
+     display: -ms-flex;
+     display: -webkit-box;
+     display: -ms-flexbox;
+     display: flex;
+    -ms-flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+     -webkit-box-pack: start;
+     -ms-flex-pack: start;
+     justify-content: flex-start;
+     -webkit-box-align: start;
+     -ms-flex-align: start;
+     align-items: flex-start;
+}
+ .testimonial .left_div .signature{
+     width: 5rem;
+     height: 5rem;
+     padding: 2rem 0 4rem 0;
+}
+ .testimonial .left_div p{
+     padding: 5rem 0 4rem 0;
+}
+ .testimonial .left_div .logo{
+     width: 15rem;
+     height: 7rem;
+}
+ .testimonial .left_div h4{
+     padding: 2rem 0;
+}
+ .testimonial .left_div span{
+     display: inline-block;
+     font-size: 1.2rem;
+     padding: 2rem 0;
+}
+ @media (max-width:576px) {
+     .testimonial{
+         background: #b8b8b8;
+    }
+}
+/* Testimonial Section Ends */
+/* Contact Section Starts */
+ .contact{
+     width: 100%;
+     height: auto;
+     background-image: -webkit-gradient( linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0))), url(img/contact.jpg);
+     background-image: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(img/contact.jpg);
+     background-position: center ;
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-attachment: fixed;
+}
+ .contact .workBox{
+     background: rgba(0, 0, 0, 0.8);
+     color: #fff;
+     padding: 4rem 2rem;
+}
+ .contact .grid_container{
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     grid-template-rows: repeat(3, 1fr);
+     grid-gap: 1rem
+}
+ .contact .workBox1{
+     grid-row: 1 / 4;
+}
+ .contact .workBox h3{
+     color: #fff;
+     font-size: 3.5rem;
+     margin: 0 1rem 5rem 1rem;
+     text-align: left;
+}
+ .contact .workBox input{
+     background: rgba(0, 0, 0, 0);
+     margin: 2rem 0 ;
+     padding: 2rem 1rem ;
+     border: 1px solid #ddd;
+     border-radius: 0;
+     color: #fff;
+     font-size: 1.5rem;
+}
+ .contact .workBox textarea{
+     background: rgba(0, 0, 0, 0);
+     margin: 2rem 0 ;
+     padding: 2rem 1rem ;
+     border: 1px solid #ddd;
+     border-radius: 0;
+     color: #fff;
+     font-size: 1.5rem;
+}
+ .floatr{
+     display: flow-root;
+}
+ .contact .workBox button{
+     display: block;
+     background: #ff2b4a;
+     border: 2px solid transparent ;
+     outline: none;
+     border-radius: 0;
+     color: #fff;
+     width: 25rem;
+     font-size: 1.8rem;
+     line-height: 3.6rem;
+     float: right;
+     margin: 2rem 0;
+     padding: .5rem 0;
+     -webkit-transition: all .5s ease-in;
+     transition: all .5s ease-in;
+}
+ .contact .workBox button:hover{
+     border: 2px solid #ff2b4a;
+     color: #ff2b4a;
+     background: rgba(0, 0, 0, 0);
+}
+ .contact .workBox p{
+     color: #fff;
+     margin: 2rem 1rem;
+     text-align: left;
+     line-height: 1.8;
+}
+ @media (max-width:992px) {
+     .contact .grid_container{
+         display: grid;
+         grid-template-columns: repeat(1, 1fr);
+         grid-gap: 1rem;
+         text-align: center;
+    }
+     .contact .workBox h3{
+         font-size: 2.5rem;
+    }
+}
+/* Contact Section Ends */
+/* 10. Footer Section Starts */
+ footer{
+     background: #222;
+     width: 100%;
+     height: 40vh;
+     text-align: center;
+     position: relative;
+}
+ footer a{
+     font-size: 2rem;
+     display: inline-block;
+     color: #fff;
+     margin-right: 3rem;
+     position: relative;
+     margin: 6rem 2rem 2rem 0;
+     -webkit-transition: all .3s ease-in;
+     transition: all .3s ease-in;
+}
+ footer a:hover{
+     color: #ff2b4a;
+}
+ footer a::after{
+     content: '';
+     position: absolute;
+     display: block;
+     width: .1rem;
+     height: 60%;
+     background: #fff;
+     top: .6rem;
+     right: -1.2rem;
+}
+ footer p{
+     color: #fff;
+     font-size: 1.2rem;
+     font-weight: 300;
+}
+ footer p span{
+     color: #ff2b4a;
+}
+ footer .lastIcon a{
+     color: #ff2b4a;
+     position: fixed;
+     right: 0;
+     left: 90%;
+     bottom: 3rem;
+     text-align: center;
+     z-index: 99;
+     width: 3.5rem;
+     height: 3.5rem;
+     border: 1px solid #ff2b4a;
+     margin:2rem 0 4rem 0;
+     text-align: center;
+     display: none;
+}
+ footer .lastIcon a:hover{
+     border: 1px solid #fff;
+}
+ footer .lastIcon a::after{
+     content: '';
+     position: absolute;
+     display: block;
+     width: 0;
+     height: 0;
+     background: #fff;
+     top: .6rem;
+     right: -1.5rem;
+}
+/* Footer Section Ends */
